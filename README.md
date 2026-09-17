@@ -61,7 +61,7 @@ score with invented coefficients.
     python fetch.py       # downloads real dependency data, caches to SQLite (slow, once)
     python build.py       # builds the graph, precomputes criticality
     python enrich.py      # optional: adds OSV advisories and maintainer counts
-    streamlit run app.py  # opens the interface in your browser
+    python -m streamlit run app.py  # opens the interface in your browser
 
 `fetch.py` and `enrich.py` are the only steps that need the internet. Everything
 afterwards reads the local cache, and the graph renderer is **inlined into the page**
