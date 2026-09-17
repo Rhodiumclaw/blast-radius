@@ -39,8 +39,8 @@ several hops away.
 
 **2. Mitigation by counterfactual, not by counting.** For each candidate upgrade the
 tool applies the patch to the graph and **re-runs the propagation**. The number on
-screen is the measured drop in exposed applications. This matters: half the
-applications in a real corpus have more than one route to a given package, so an
+screen is the measured drop in exposed applications. This matters: many applications
+have more than one route to a given package, so an
 upgrade that severs one route often saves nobody. A greedy hitting set is used only to
 *propose* candidates; every proposal is then verified by simulation.
 
@@ -90,9 +90,22 @@ says exactly how many are hidden.
 
 **Real incidents, as presets.** `colors`, `faker`, `rc`, `eslint-scope`, `is-promise`
 and `minimist` were all genuinely attacked or sabotaged in the wild, and this portfolio
-still depends on them. None reaches more than two applications here — while `ms`, a
-six-line utility that has never been attacked, reaches seventeen. Fame and CVE severity
-do not predict blast radius; position in the graph does.
+still depends on them. Simulated in the *already in your tree* scenario, this is what
+they are worth against this corpus:
+
+| Package | Applications reached |
+|---|---|
+| `minimist` | 3 |
+| `colors` | 2 |
+| `rc` | 1 |
+| `eslint-scope` | 1 |
+| `is-promise` | 1 |
+| `faker` | 0 |
+| **`ms`** — never attacked, six lines long | **26** |
+
+Under *next release*, where version pins gate every hop, `ms` still reaches 17 and
+holds 9 more behind pins. Fame and CVE severity do not predict blast radius; position
+in the graph does.
 
 ## Beyond the interface
 
