@@ -1,0 +1,24 @@
+[theme]
+base = "dark"
+primaryColor = "#E8336D"
+backgroundColor = "#0E1218"
+secondaryBackgroundColor = "#161B24"
+textColor = "#DDE3EA"
+
+[server]
+# false so `streamlit run app.py` opens your browser for you. Set to true if you
+# are running this on a machine with no display.
+headless = false
+# Bind to the loopback interface only. By default Streamlit listens on every
+# interface and prints a public "External URL", which on conference or hotel wifi
+# puts your dependency graph on the local network. Comment this out if you
+# deliberately want to reach the demo from another device.
+address = "localhost"
+
+[browser]
+gatherUsageStats = false
+
+[logger]
+# Keeps the terminal clean while screen-recording the demo. Raise to "info" if
+# you are debugging a startup problem.
+level = "error"
