@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Scratch space - never belongs in the repository
+tmp/
+*.log
+
+# Superseded by graph.json (plain JSON, loads without executing code)
+graph.pkl
+
+# Keep cache.db, records.json, graph.json and critical.json: they are what make
+# the demo reproducible offline for anyone who clones this.

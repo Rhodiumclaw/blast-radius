@@ -1,0 +1,5 @@
+networkx==3.6.1
+node-semver==0.9.1
+streamlit==1.63.0
+pyvis==0.3.2
+pandas==3.0.5
